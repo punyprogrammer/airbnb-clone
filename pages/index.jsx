@@ -4,6 +4,8 @@ import Header from '../components/Header'
 import Banner from '../components/Banner'
 import SmallCard from '../components/SmallCard'
 import MediumCard from '../components/MediumCard'
+import LargeCard from '../components/LargeCard'
+import Footer from '../components/Footer'
 const Home = ({ cardsData, exploreData }) => {
   return (
     <div className="">
@@ -34,13 +36,16 @@ const Home = ({ cardsData, exploreData }) => {
           <h2 className="font-default py-8 pb-5 text-3xl font-medium">
             Live Anywhere
           </h2>
-          <div className="flex space-x-4 overflow-x-scroll p-5">
+          <div className="carousel slide relative   flex space-x-4 overflow-scroll scrollbar-hide p-5">
             {cardsData.map((item) => (
               <MediumCard key={item.img} img={item.img} title={item.title} />
             ))}
           </div>
         </section>
+
+          <LargeCard  img='https://links.papareact.com/4cj' title='The Greatest Outdoors' buttonText='Get Inspired' desc='Wishlists created by Airbnb'/>
       </main>
+      <Footer/>
     </div>
   )
 }
